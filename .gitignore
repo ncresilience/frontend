@@ -10,12 +10,12 @@ out/
 dist/
 build/
 
-# Environment variables
+# Environment variables (keep .env.production for deployment)
 .env
 .env.local
 .env.development.local
 .env.test.local
-.env.production.local
+# NOTE: .env.production is committed for Render deployment
 
 # IDEs
 .vscode/
@@ -54,6 +54,30 @@ public/*.webp
 public/*.svg
 !public/favicon.ico
 
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs  
+logs
+*.log
+
+# Next.js cache
+.next/cache/
+
+# Vercel
+.vercel
+
 # Misc
 *.tgz
 *.tar.gz
+
+# PM2 logs
+pm2.log
+ecosystem.config.js
+pm2.config.js
+
+# Sentry Config File
+.sentryclirc
