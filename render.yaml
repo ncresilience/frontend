@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nc-resilience-frontend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        value: https://nc-resilience-backend.onrender.com/api
+    # Static site alternative (if you prefer):
+    # publishPath: ./out
+    # buildCommand: npm install && npm run build && npm run export
