@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import * as apiModule from './lib/api';
 import { Statistics } from './types';
 import HelpTooltip from './components/HelpTooltip';
-import ExplanationPanel from './components/ExplanationPanel';
 
 function HomePage() {
   const [stats, setStats] = useState<Statistics | null>(null);
@@ -61,66 +60,172 @@ function HomePage() {
       <main className="relative">
         {/* Hero Background Image */}
         <div 
-          className="relative h-[500px] bg-cover bg-center bg-no-repeat"
+          className="relative h-[600px] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/nc-hero.png')"
+            backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/nc-hero.png')"
           }}
         >
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white px-4 max-w-5xl">
-              <h2 className="text-6xl font-extrabold mb-6 leading-tight">
-                Build Resilience for Your{' '}
-                <span className="text-blue-200">North Carolina</span>{' '}
-                Operation
+            <div className="text-center text-white px-4 max-w-6xl">
+              <h2 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Protect Your Business.<br />
+                <span className="text-blue-200">Build Resilience.</span><br />
+                <span className="text-green-200">Access Resources.</span>
               </h2>
-              <p className="text-xl max-w-4xl mx-auto mb-8 leading-relaxed">
-                Get personalized risk intelligence and preparedness guidance 
-                tailored to your industry and location across all 100 North Carolina counties.
+              <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-4 leading-relaxed font-medium text-blue-100">
+                Risk intelligence platform for North Carolina farmers and small business owners
               </p>
+              <p className="text-lg max-w-3xl mx-auto mb-8 leading-relaxed opacity-90">
+                Assess risks, strengthen supply chains, and access government programs 
+                tailored to your industry and location across all 100 NC counties.
+              </p>
+              
+              {/* Social Proof */}
+              <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-sm">
+                <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span>All 100 NC Counties</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>15+ Government Programs</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                  <span>Real-time Risk Data</span>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#choose-path" className="btn-primary bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg font-semibold">
-                  Get Started →
+                <a href="#choose-path" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 text-xl font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 inline-block">
+                  Assess My Risk →
                 </a>
-                <a href="/map" className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg font-semibold">
+                <a href="/map" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 inline-block">
                   View Risk Map
                 </a>
-                <a href="/about" className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg font-semibold">
-                  About Us
+                <a href="#how-it-works" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 inline-block">
+                  How It Works
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Content Section */}
-        <div className="section-padding py-16 bg-white">
+        {/* Value Proposition Section */}
+        <div className="py-16 bg-gray-50">
           <div className="container-max">
-            {/* Welcome Explanation */}
-            <div className="max-w-4xl mx-auto mb-12">
-              <ExplanationPanel 
-                title="Welcome to the NC Resilience Platform - Your Guide to Staying Safe and Prepared"
-                defaultOpen={true}
-                importance="high"
-              >
-                <div className="space-y-4">
-                  <p className="text-lg">
-                    <strong>This platform helps North Carolina farmers and small business owners assess risk, build resilience, and strengthen supply chains to navigate economic challenges and natural events like hurricanes and droughts.</strong>
-                  </p>
-                  <p>
-                    We've simplified complex government data and programs into easy-to-understand information specifically for people like you.
-                  </p>
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                    <h4 className="font-semibold text-yellow-800 mb-2">What this platform does for you:</h4>
-                    <ul className="list-disc list-inside text-yellow-700 space-y-1">
-                      <li>Shows your specific risks based on your location and business type</li>
-                      <li>Finds government assistance programs you qualify for</li>
-                      <li>Provides step-by-step emergency preparedness guidance</li>
-                      <li>Connects you with resources during crisis situations</li>
-                    </ul>
-                  </div>
-                </div>
-              </ExplanationPanel>
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">
+                Everything You Need to Stay Resilient
+              </h3>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We've simplified complex government data and programs into easy-to-understand tools 
+                specifically designed for North Carolina farmers and small business owners.
+              </p>
             </div>
+
+            {/* Value Proposition Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {/* Card 1: Know Your Risks */}
+              <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Know Your Risks</h4>
+                <p className="text-gray-600">Get personalized risk assessments based on your specific location and business type across all 100 NC counties.</p>
+              </div>
+
+              {/* Card 2: Find Resources */}
+              <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Find Resources</h4>
+                <p className="text-gray-600">Discover government assistance programs, loans, and grants you qualify for with our intelligent matching system.</p>
+              </div>
+
+              {/* Card 3: Build Resilience */}
+              <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Build Resilience</h4>
+                <p className="text-gray-600">Access step-by-step preparedness guidance and tools to strengthen your business against future challenges.</p>
+              </div>
+
+              {/* Card 4: Stay Connected */}
+              <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM12 8V4l8 8-8 8v-4H0l12-8z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Stay Connected</h4>
+                <p className="text-gray-600">Get real-time alerts and connect with emergency resources during crisis situations when you need them most.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* How It Works Section */}
+        <div id="how-it-works" className="py-16 bg-white">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">
+                How It Works
+              </h3>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Get started in just three simple steps
+              </p>
+            </div>
+
+            {/* Steps */}
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* Step 1 */}
+              <div className="text-center">
+                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
+                <h4 className="text-2xl font-semibold text-gray-900 mb-3">Tell Us About Your Business</h4>
+                <p className="text-lg text-gray-600">Share your location, business type, and key details so we can provide personalized insights.</p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="text-center">
+                <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
+                <h4 className="text-2xl font-semibold text-gray-900 mb-3">Get Your Risk Assessment</h4>
+                <p className="text-lg text-gray-600">Receive a comprehensive analysis of risks specific to your operation and location.</p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="text-center">
+                <div className="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
+                <h4 className="text-2xl font-semibold text-gray-900 mb-3">Access Your Resources</h4>
+                <p className="text-lg text-gray-600">Discover matched programs, preparedness tools, and ongoing support for your business.</p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <a href="#choose-path" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 text-xl font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 inline-block">
+                Start Your Assessment →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="section-padding py-16 bg-gray-50">
+          <div className="container-max">
 
             {/* Statistics Cards */}
             {!loading && stats && (
