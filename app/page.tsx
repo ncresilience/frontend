@@ -88,7 +88,7 @@ function HomePage() {
                 </div>
                 <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                  <span>15+ Government Programs</span>
+                  <span>5 Key Government Programs</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white bg-opacity-20 px-3 py-2 rounded-full">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
