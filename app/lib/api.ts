@@ -1,6 +1,6 @@
 import { APIResponse, County, CountyDetails, Rankings, RiskAssessment, Statistics, EntityType } from '../types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://nc-resilience-backend.onrender.com/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend-w8kl.onrender.com/api';
 
 class APIError extends Error {
   constructor(message: string, public status: number) {
