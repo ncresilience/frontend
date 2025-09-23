@@ -104,11 +104,10 @@ function HomePage() {
               >
                 <div className="space-y-4">
                   <p className="text-lg">
-                    <strong>This platform helps North Carolina farmers and small business owners prepare for and recover from disasters like hurricanes, droughts, and economic challenges.</strong>
+                    <strong>This platform helps North Carolina farmers and small business owners assess risk, build resilience, and strengthen supply chains to navigate economic challenges and natural events like hurricanes and droughts.</strong>
                   </p>
                   <p>
-                    We've simplified complex government data and programs into easy-to-understand information specifically for people like you. 
-                    No technical background needed - we explain everything in plain English.
+                    We've simplified complex government data and programs into easy-to-understand information specifically for people like you.
                   </p>
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                     <h4 className="font-semibold text-yellow-800 mb-2">What this platform does for you:</h4>
